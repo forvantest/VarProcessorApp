@@ -1,5 +1,4 @@
-﻿// 注意：這是設計器生成的程式碼，請在 Visual Studio 的表單設計器中調整介面
-namespace VarProcessor
+﻿namespace VarProcessorApp
 {
     partial class MainForm
     {
@@ -29,75 +28,76 @@ namespace VarProcessor
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtLog = new System.Windows.Forms.TextBox();
-            this.panelButtons = new System.Windows.Forms.Panel();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnReassemble = new System.Windows.Forms.Button();
-            this.btnClearLog = new System.Windows.Forms.Button();
-            this.panelButtons.SuspendLayout();
+            this.logWindow = new System.Windows.Forms.TextBox();
+            this.buttonPanel = new System.Windows.Forms.Panel();
+            this.clearLogButton = new System.Windows.Forms.Button();
+            this.reassembleButton = new System.Windows.Forms.Button();
+            this.startButton = new System.Windows.Forms.Button();
+            this.buttonPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtLog
+            // logWindow
             // 
-            this.txtLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLog.Location = new System.Drawing.Point(0, 0);
-            this.txtLog.Multiline = true;
-            this.txtLog.Name = "txtLog";
-            this.txtLog.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtLog.Size = new System.Drawing.Size(800, 400);
-            this.txtLog.TabIndex = 0;
+            this.logWindow.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.logWindow.Location = new System.Drawing.Point(0, 0);
+            this.logWindow.Multiline = true;
+            this.logWindow.Name = "logWindow";
+            this.logWindow.ReadOnly = true;
+            this.logWindow.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.logWindow.Size = new System.Drawing.Size(800, 411);
+            this.logWindow.TabIndex = 0;
             // 
-            // panelButtons
+            // buttonPanel
             // 
-            this.panelButtons.Controls.Add(this.btnStart);
-            this.panelButtons.Controls.Add(this.btnReassemble);
-            this.panelButtons.Controls.Add(this.btnClearLog);
-            this.panelButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelButtons.Location = new System.Drawing.Point(0, 400);
-            this.panelButtons.Name = "panelButtons";
-            this.panelButtons.Size = new System.Drawing.Size(800, 50);
-            this.panelButtons.TabIndex = 1;
+            this.buttonPanel.Controls.Add(this.clearLogButton);
+            this.buttonPanel.Controls.Add(this.reassembleButton);
+            this.buttonPanel.Controls.Add(this.startButton);
+            this.buttonPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonPanel.Location = new System.Drawing.Point(0, 411);
+            this.buttonPanel.Name = "buttonPanel";
+            this.buttonPanel.Size = new System.Drawing.Size(800, 39);
+            this.buttonPanel.TabIndex = 1;
             // 
-            // btnStart
+            // clearLogButton
             // 
-            this.btnStart.Location = new System.Drawing.Point(10, 10);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(100, 30);
-            this.btnStart.TabIndex = 0;
-            this.btnStart.Text = "開始處理";
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            this.clearLogButton.Location = new System.Drawing.Point(500, 6);
+            this.clearLogButton.Name = "clearLogButton";
+            this.clearLogButton.Size = new System.Drawing.Size(100, 23);
+            this.clearLogButton.TabIndex = 2;
+            this.clearLogButton.Text = "清除日誌";
+            this.clearLogButton.UseVisualStyleBackColor = true;
+            this.clearLogButton.Click += new System.EventHandler(this.clearLogButton_Click);
             // 
-            // btnReassemble
+            // reassembleButton
             // 
-            this.btnReassemble.Location = new System.Drawing.Point(120, 10);
-            this.btnReassemble.Name = "btnReassemble";
-            this.btnReassemble.Size = new System.Drawing.Size(100, 30);
-            this.btnReassemble.TabIndex = 1;
-            this.btnReassemble.Text = "重組 .var";
-            this.btnReassemble.UseVisualStyleBackColor = true;
-            this.btnReassemble.Click += new System.EventHandler(this.btnReassemble_Click);
+            this.reassembleButton.Location = new System.Drawing.Point(250, 6);
+            this.reassembleButton.Name = "reassembleButton";
+            this.reassembleButton.Size = new System.Drawing.Size(100, 23);
+            this.reassembleButton.TabIndex = 1;
+            this.reassembleButton.Text = "重新組裝";
+            this.reassembleButton.UseVisualStyleBackColor = true;
+            this.reassembleButton.Click += new System.EventHandler(this.reassembleButton_Click);
             // 
-            // btnClearLog
+            // startButton
             // 
-            this.btnClearLog.Location = new System.Drawing.Point(230, 10);
-            this.btnClearLog.Name = "btnClearLog";
-            this.btnClearLog.Size = new System.Drawing.Size(100, 30);
-            this.btnClearLog.TabIndex = 2;
-            this.btnClearLog.Text = "清除日誌";
-            this.btnClearLog.UseVisualStyleBackColor = true;
-            this.btnClearLog.Click += new System.EventHandler(this.btnClearLog_Click);
+            this.startButton.Location = new System.Drawing.Point(12, 6);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(100, 23);
+            this.startButton.TabIndex = 0;
+            this.startButton.Text = "開始處理";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtLog);
-            this.Controls.Add(this.panelButtons);
+            this.Controls.Add(this.logWindow);
+            this.Controls.Add(this.buttonPanel);
             this.Name = "MainForm";
-            this.Text = "Var 處理工具";
-            this.panelButtons.ResumeLayout(false);
+            this.Text = "VAR Processor";
+            this.buttonPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,10 +105,10 @@ namespace VarProcessor
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtLog;
-        private System.Windows.Forms.Panel panelButtons;
-        private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.Button btnReassemble;
-        private System.Windows.Forms.Button btnClearLog;
+        private System.Windows.Forms.TextBox logWindow;
+        private System.Windows.Forms.Panel buttonPanel;
+        private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Button reassembleButton;
+        private System.Windows.Forms.Button clearLogButton;
     }
 }

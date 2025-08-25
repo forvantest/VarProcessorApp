@@ -1,20 +1,19 @@
 using System;
 using System.Windows.Forms;
 
-// 程式入口點
-namespace VarProcessor
+namespace VarProcessorApp
 {
     internal static class Program
     {
         /// <summary>
-        /// 應用程式的主要進入點。
+        /// 程式的主要入口點。
         /// </summary>
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());  // 啟動主表單
+            Application.Run(new MainForm());
         }
     }
 }

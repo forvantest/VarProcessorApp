@@ -2,50 +2,35 @@
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-// 主表單，處理 GUI 事件
-namespace VarProcessor
+namespace VarProcessorApp
 {
 public partial class MainForm : Form
 {
 public MainForm()
 {
 InitializeComponent();
-Core.LogAction = AppendLog;  // 設定日誌委託
+Core.Logger.SetLogWindow(logWindow);  // 設定日誌輸出到 TextBox
 }
 
-// 開始按鈕事件
-private async void btnStart_Click(object sender, EventArgs e)
+// 開始按鈕事件：觸發處理 .var 檔案
+private async void startButton_Click(object sender, EventArgs e)
 {
-btnStart.Enabled = false;
-await Task.Run(() => Core.ProcessVarsAsync());
-btnStart.Enabled = true;
+Core.Logger.Log("[INFO] 開始處理 .var 檔案...");
+await Task.Run(async () => await Core.Processor.ProcessVarsAsync());
 }
 
-// 重組按鈕事件
-private async void btnReassemble_Click(object sender, EventArgs e)
+// 重新組裝按鈕事件：觸發重新組裝 .var 檔案
+private async void reassembleButton_Click(object sender, EventArgs e)
 {
-btnReassemble.Enabled = false;
-await Task.Run(() => Core.ReassembleVarsAsync());
-btnReassemble.Enabled = true;
+Core.Logger.Log("[INFO] 開始重新組裝 .var 檔案...");
+await Task.Run(() => Core.Processor.ReassembleAll());
 }
 
-// 清除日誌按鈕事件
-private void btnClearLog_Click(object sender, EventArgs e)
+// 清除日誌按鈕事件：清除 TextBox 內容
+private void clearLogButton_Click(object sender, EventArgs e)
 {
-txtLog.Clear();
-}
-
-// 附加日誌（執行緒安全）
-private void AppendLog(string message)
-{
-if (txtLog.InvokeRequired)
-{
-txtLog.Invoke(new Action(() => txtLog.AppendText(message)));
-}
-else
-{
-txtLog.AppendText(message);
-}
+logWindow.Clear();
+Core.Logger.Log("[INFO] 日誌已清除");
 }
 }
 }
